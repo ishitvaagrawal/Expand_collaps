@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Write a JavaScript to Collapse and Expand the content by clicking on the Button as per the following output image. -->
+    <h1>Expand and Collapse</h1>
+    <button id="btn1">Expand</button>
+    <div id="content">
+        <p>This is the content to be collapsed and expanded</p>
+        <button id="btn2">Expand</button>
+        <div class="sub-content">
+            <li>1. Information Technology</li>
+            <li>2. Web Technology</li>
+            <li>3. Operating Systems</li>
+        </div>
+    </div>
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var content = document.getElementById("content");
+        var subContent = document.querySelector(".sub-content");
+        var flag1 = 0, flag2=0;
+        btn1.addEventListener("click", function() {
+            if(flag1 == 0) {
+                content.style.display = "none";
+                btn1.innerHTML = "Expand";
+                flag1 = 1;
+            } else {
+                content.style.display = "block";
+                btn1.innerHTML = "Collapse";
+                flag1 = 0;
+            }
+        });
+        btn2.addEventListener("click", function() {
+            if(flag2 == 0) {
+                subContent.style.display = "none";
+                btn2.innerHTML = "Expand";
+                flag2 = 1;
+            } else {
+                subContent.style.display = "block";
+                btn2.innerHTML = "Collapse";
+                flag2 = 0;
+            }
+        });
+    </script>
+
+
+
+
+</body>
+</html>
